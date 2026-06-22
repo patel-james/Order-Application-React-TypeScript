@@ -16,7 +16,7 @@ router.post("/", (request, response) => {
   const items = request.body.items as MenuItem[];
 
   if (!items || items.length === 0) {
-    return response.status(400).json({ message: "Order must include at least one item." });
+    return response.status(400).json({ message: "Order must include at least 1 item." });
   }
 
   const total = items.reduce((sum, item) => sum + item.price, 0);
